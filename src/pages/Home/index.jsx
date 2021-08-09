@@ -26,7 +26,7 @@ const Home = () => {
         ) : (
           <>
             <ProductCardContainer>
-              {products
+              {products // eslint-disable-next-line
                 .filter((product) => {
                   if (searchInput === "") {
                     return <Product key={product.id} product={product} />;

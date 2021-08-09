@@ -2,8 +2,8 @@ import { ProductCard } from "./styles";
 import { useCart } from "../../providers/CartProvider";
 import Button from "../Button";
 
-const Product = ({ product, isRemovable = false }) => {
-  const { addToCart, removeFromCart } = useCart();
+const Product = ({ product }) => {
+  const { addToCart } = useCart();
 
   const { id, title, priceFormatted, image } = product;
 
@@ -18,15 +18,9 @@ const Product = ({ product, isRemovable = false }) => {
           <div>
             <span>{priceFormatted}</span>
           </div>
-          {isRemovable ? (
-            <Button type="button" onClick={() => removeFromCart(id)}>
-              <span>Remover do Carrinho</span>
-            </Button>
-          ) : (
-            <Button type="button" onClick={() => addToCart(product, id)}>
-              <span>Adicionar ao Carrinho</span>
-            </Button>
-          )}
+          <Button type="button" onClick={() => addToCart(product, id)}>
+            <span>Adicionar ao Carrinho</span>
+          </Button>
         </div>
       </li>
     </ProductCard>

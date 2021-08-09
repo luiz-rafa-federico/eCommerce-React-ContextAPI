@@ -3,26 +3,31 @@ import styled from "styled-components";
 export const CartContainer = styled.div`
   max-width: 1100px;
   width: 100vw;
-  height: 100vh;
   display: flex;
-  height: 100vh;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: flex-start;
   margin: auto;
   margin-top: 5px;
   background-color: #fff;
+  padding: 20px;
+
+  @media only screen and (min-width: 320px) and (max-width: 768px) {
+    flex-direction: column;
+    width: 100%;
+  }
 `;
 
 export const CardsDisplay = styled.div`
-  width: 100vw;
   display: flex;
   gap: 15px;
   flex-wrap: wrap;
-  justify-content: center;
-  padding: 15px;
-  background-color: #fff;
+  justify-content: space-between;
+  width: 50%;
+
+  @media only screen and (min-width: 320px) and (max-width: 768px) {
+    justify-content: flex-end;
+    width: 100%;
+  }
 `;
 
 export const CheckoutCard = styled.div`
@@ -33,6 +38,12 @@ export const CheckoutCard = styled.div`
   border: 15px solid #dcdefe;
   margin-top: 20px;
   border-radius: 15px;
+  width: 300px;
+
+  @media only screen and (min-width: 320px) and (max-width: 768px) {
+    font-size: 12px;
+    width: 100%;
+  }
 `;
 
 export const Container404 = styled(CheckoutCard)`
@@ -45,7 +56,9 @@ export const Container404 = styled(CheckoutCard)`
   margin-top: 5px;
   background-color: #fff;
   h1 {
-    margin-bottom: -30px;
+    margin-bottom: -20px;
+    margin-top: -20px;
+    text-align: center;
   }
   button {
     width: 25%;
@@ -53,10 +66,11 @@ export const Container404 = styled(CheckoutCard)`
 
   @media only screen and (min-width: 320px) and (max-width: 768px) {
     img {
-      width: 90%;
+      width: 70%;
     }
+
     button {
-      width: 90%;
+      width: 85%;
     }
   }
 `;

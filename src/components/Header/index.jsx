@@ -13,7 +13,7 @@ const Header = () => {
         <Link to="/">Kenzie Shop</Link>
       </h2>
       <Input
-        placeholder="Encontrar meu produto"
+        placeholder="Busque pelo nome do produto"
         type="text"
         value={searchInput}
         onChange={(e) => setSearchInput(e.target.value)}

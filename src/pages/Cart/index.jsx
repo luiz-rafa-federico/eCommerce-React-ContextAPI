@@ -9,7 +9,7 @@ import {
   CheckoutCard,
   CardsDisplay,
 } from "./styles";
-import Product from "../../components/Product";
+import ProductOnCart from "../../components/ProductOnCart";
 import ShoppingImg from "../../assets/shopping.png";
 
 const Cart = () => {
@@ -52,6 +52,11 @@ const Cart = () => {
       transition={{ duration: 0.5 }}
     >
       <CartContainer>
+        <CardsDisplay>
+          {cart.map((product) => (
+            <ProductOnCart key={product.id} product={product} />
+          ))}
+        </CardsDisplay>
         <CheckoutCard>
           <strong>Resumo do pedido:</strong>
           <h4>{cart.length} produtos</h4>
@@ -60,11 +65,6 @@ const Cart = () => {
             Finalizar o pedido
           </Button>
         </CheckoutCard>
-        <CardsDisplay>
-          {cart.map((product) => (
-            <Product key={product.id} product={product} isRemovable />
-          ))}
-        </CardsDisplay>
       </CartContainer>
     </motion.div>
   );

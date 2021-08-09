@@ -43,6 +43,7 @@ export const Container = styled.div`
 
     .MuiButtonBase-root {
       width: 0px;
+      height: 0px;
     }
   }
 
